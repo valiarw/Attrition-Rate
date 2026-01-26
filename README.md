@@ -1,13 +1,10 @@
-# Laporan Proyek Data Science - Valia Rismawanti
-**Submission Pertama: Menyelesaikan Permasalahan Human Resources**
-
-## Project Overview
-### Latar Belakang
-Jaya Jaya Maju merupakan salah satu perusahaan multinasional yang telah berdiri sejak tahun 2000. Ia memiliki lebih dari 1000 karyawan yang tersebar di seluruh penjuru negeri. 
-
-Walaupun telah menjadi menjadi perusahaan yang cukup besar, Jaya Jaya Maju masih cukup kesulitan dalam mengelola karyawan. Hal ini berimbas tingginya attrition rate (rasio jumlah karyawan yang keluar dengan total karyawan keseluruhan) hingga lebih dari 10%.
-
-Untuk mencegah hal ini semakin parah, manajer departemen HR ingin meminta bantuan Anda mengidentifikasi berbagai faktor yang mempengaruhi tingginya attrition rate tersebut. Selain itu, ia juga meminta Anda untuk membuat business dashboard untuk membantunya memonitori berbagai faktor tersebut. Selain itu, mereka juga telah menyediakan dataset yang dapat Anda unduh melalui tautan berikut: [Jaya Jaya Maju](https://github.com/dicodingacademy/dicoding_dataset/tree/main/employee).
+# 📄 HR Employee Attrition Analysis & Dashboard
+## 📌 Project Overview
+Proyek ini bertujuan untuk membantu departemen HR dalam memahami, memonitor, dan memprediksi tingkat attrition (karyawan keluar) di perusahaan. Dengan menganalisis data historis karyawan, kita dapat mengidentifikasi faktor-faktor utama penyebab resign dan membangun model prediksi untuk langkah preventif.
+Proyek ini mencakup:
+1) Data Analysis & Visualization: Mencari faktor penyebab attrition (Deskriptif).
+2) Machine Learning Modeling: Memprediksi karyawan yang berpotensi resign (Prediktif).
+3) Business Dashboard: Visualisasi interaktif menggunakan Looker Studio untuk monitoring HR.
 
 ## Business Understanding
 ### Problem Statements
@@ -37,14 +34,14 @@ Untuk mencapai tujuan tersebut, pendekatan solusi menggunakan eksplorasi data ka
 ## Data Understanding 
 Pada proyek ini, dataset yang digunakan adalah [Employee_Data.csv](https://github.com/dicodingacademy/dicoding_dataset/blob/main/employee/employee_data.csv).
 
-**Kondisi dan karakteristik Dataset:**
+### Kondisi dan karakteristik Dataset:
 - Jumlah data: 1.470 baris (record)
 - Jumlah fitur: 34 fitur + 1 target (Attrition)
 - Tipe data: kombinasi antara numerik, kategorikal, dan biner
 - Kondisi: Data bersih, namun memerlukan encoding untuk fitur kategorikal sebelum digunakan dalam model machine learning.
 - Target variabel: Attrition (0 = Stay, 1 = Resign)
 
-## 📂 Data Dictionary
+### 📂 Data Dictionary
 Berikut adalah penjelasan mengenai kolom-kolom yang terdapat dalam dataset:
 
 | Feature | Description | Values / Scale |
@@ -100,20 +97,15 @@ Pada proyek ini algoritma machine learning yang digunakan ada, 3 yaitu:
     - Mengatasi overfitting dengan baik berkat teknik ensembling (bagging).
     - Dapat menangani data numerik maupun kategorikal tanpa perlu banyak preprocessing.
     - Memiliki fitur penting (feature importance) yang membantu dalam seleksi fitur.
-
 - Kekurangan:
     - Bisa memakan memori besar karena banyaknya pohon.
     - Interpretasi model lebih kompleks dibanding decision tree tunggal.
     - Kurang optimal untuk data yang highly imbalanced, kecuali disesuaikan.
-2. **Gradient Boosting**
+2. **Logistic Regression**
 - Kelebihan:
-    - Salah satu algoritma ensemble terbaik untuk menangani masalah klasifikasi dan regresi.
-    - Cenderung memberikan hasil yang lebih akurat dibanding model-tree lainnya dengan mengoptimalkan prediksi secara iteratif.
-    - Mampu menangani data dengan noise dan outlier lebih baik.
+    - 
 - Kekurangan:
-    - Lebih lambat dalam training dibandingkan dengan Random Forest, terutama untuk dataset besar.
-    - Rentan terhadap overfitting jika tidak dituning dengan baik.
-    - Model bisa menjadi lebih kompleks dan sulit untuk diinterpretasi karena iterasi yang banyak.
+    - 
 3. **Neural Network**
 - Kelebihan:
     - Mampu menangkap pola kompleks dan relasi non-linear dalam data.
@@ -124,19 +116,18 @@ Pada proyek ini algoritma machine learning yang digunakan ada, 3 yaitu:
     - Memerlukan proses training yang lama, terutama dengan banyak layer.
     - Sulit diinterpretasi dibanding model lainnya.
 
-__Perbandingan dari 3 algoritma yang dipilih:__
-| Model             | Accuracy | Precision | Recall | F1-Score |
-|------------------|----------|-----------|--------|----------|
-| Random Forest     | 0.7999   | 0.7140    | 0.9983 | 0.8326   |
-| Gradient Boosting | 0.8003   | 0.7139    | 1.0000 | 0.8331   |
-| Neural Network    | 0.7927   | 0.7102    | 0.9866 | 0.8259   |
-
-- Model Terbaik: __Gradient Boosting__
+Berikut adalah perbandingan performa model Machine Learning yang telah dilatih:
+| Model | Accuracy | Precision | Recall | F1-Score |
+| :--- | :--- | :--- | :--- | :--- |
+| **RandomForestClassifier** | 0.6772 | 0.7524 | 0.6772 | 0.7046 |
+| **LogisticRegression** | 0.8101 | 0.6563 | 0.8101 | 0.7251 |
+| **NeuralNetwork** | 0.8165 | 0.7839 | 0.8165 | 0.7859 |
+- Model Terbaik: __Neural Network__
 Alasan pemilihan:
-    - F1-score tertinggi (0.8331) menunjukkan keseimbangan terbaik antara precision dan recall.
-    - Recall sempurna (1.0) menandakan tidak ada false negative—semua risiko berhasil terdeteksi.
-    - Meskipun akurasi tidak jauh berbeda dari Random Forest, hasil akhir menunjukkan Gradient Boosting sebagai yang paling konsisten dan presisi dalam konteks dataset ini.
-
+    - Akurasi Tertinggi (81.65%): Sedikit lebih unggul dibanding Logistic Regression.
+    - Keseimbangan Terbaik: Neural Network memiliki F1-Score tertinggi (0.7859), yang artinya model ini paling seimbang dalam menangani Precision (ketepatan tebakan) dan Recall (daya tangkap karyawan yang berpotensi resign).
+    - Perbandingan dengan Random Forest: Meskipun Random Forest punya Precision yang lumayan, namun akurasi dan recall-nya jauh tertinggal dibanding dua model lainnya.
+      
 ## Evaluation
 Untuk mengevaluasi performa model dalam memprediksi persetujuan pinjaman (LoanApproved), digunakan empat metrik utama berikut:
 1. Accuracy
@@ -160,14 +151,10 @@ Merupakan harmonic mean antara precision dan recall. Berguna ketika ada ketidaks
 $$\text{F1-Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}$$
 
 ## Conclusion
-Berdasarkan hasil pengujian, **Model Gradient Boosting** menunjukkan performa terbaik secara keseluruhan, terutama dari sisi recall dan F1-Score. Ini berarti model tersebut sangat baik dalam menangkap semua kasus peminjam yang disetujui (true positive) dan menjaga keseimbangan antara precision dan recall.
 
-Relevansi Metrik terhadap Konteks
-Dalam konteks persetujuan pinjaman, recall menjadi metrik yang sangat penting karena:
-- Kita tidak ingin melewatkan peminjam yang sebenarnya layak mendapatkan pinjaman (false negative).
-- Model harus lebih toleran terhadap false positive daripada false negative, karena menyaring calon nasabah potensial lebih baik daripada kehilangan mereka sama sekali.
-Namun demikian, precision juga harus dipertimbangkan agar bank tidak terlalu banyak memberikan pinjaman pada peminjam yang seharusnya ditolak.
-
-
-
-
+# 🛠️ Requirements & Installation
+Jika ingin menjalankan kode analisis ini di lokal atau Google Colab:
+Clone repository ini:
+`git clone https://github.com/username/repo-name.git`
+Install library yang dibutuhkan:
+`pip install -r requirements.txt`
