@@ -103,9 +103,11 @@ Pada proyek ini algoritma machine learning yang digunakan ada, 3 yaitu:
     - Kurang optimal untuk data yang highly imbalanced, kecuali disesuaikan.
 2. **Logistic Regression**
 - Kelebihan:
-    - 
+    - Komputasinya sangat ringan. Melatih data ribuan baris cuma butuh sepersekian detik.
+    - Jarang mengalami overfitting pada dataset kecil hingga menengah, asalkan fiturnya tidak terlalu banyak.
 - Kekurangan:
-    - 
+    - Sensitif terhadap Outlier (Data Pencilan)
+    - Masalah Multikolinearitas, fitur yang mirip harus dibuang salah satu.
 3. **Neural Network**
 - Kelebihan:
     - Mampu menangkap pola kompleks dan relasi non-linear dalam data.
@@ -151,10 +153,17 @@ Merupakan harmonic mean antara precision dan recall. Berguna ketika ada ketidaks
 $$\text{F1-Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}$$
 
 ## Conclusion
-
+Berdasarkan analisis data dan pengembangan model Machine Learning yang telah dilakukan, dapat disimpulkan bahwa:
+1) Faktor Utama Attrition: Analisis menunjukkan bahwa Lembur (OverTime), Tingkat Gaji (Monthly Income), dan Usia (Age) adalah faktor paling dominan yang mempengaruhi keputusan karyawan untuk keluar. Karyawan yang sering lembur dengan gaji rendah memiliki risiko resign tertinggi.
+2) Performa Model: Dari tiga model yang diuji (Random Forest, Logistic Regression, Neural Network), Neural Network terbukti menjadi model terbaik dengan Akurasi 81.65% dan F1-Score 0.78. Model ini dinilai cukup andal untuk digunakan departemen HR sebagai alat deteksi dini (early warning system).
+3) Rekomendasi Bisnis: Untuk menurunkan tingkat attrition, disarankan agar perusahaan meninjau ulang kebijakan lembur, melakukan penyesuaian gaji untuk posisi krusial, dan memberikan perhatian lebih pada program retensi untuk karyawan muda (<30 tahun).
+   
 # 🛠️ Requirements & Installation
 Jika ingin menjalankan kode analisis ini di lokal atau Google Colab:
-Clone repository ini:
-`git clone https://github.com/username/repo-name.git`
-Install library yang dibutuhkan:
+- Clone repository ini:
+  
+`git clone https://github.com/valiarw/Attrition-Rate.git`
+
+- Install library yang dibutuhkan:
+  
 `pip install -r requirements.txt`
