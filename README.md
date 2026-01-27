@@ -121,14 +121,13 @@ Pada proyek ini algoritma machine learning yang digunakan ada, 3 yaitu:
 Berikut adalah perbandingan performa model Machine Learning yang telah dilatih:
 | Model | Accuracy | Precision | Recall | F1-Score |
 | :--- | :--- | :--- | :--- | :--- |
-| **RandomForestClassifier** | 0.6772 | 0.7524 | 0.6772 | 0.7046 |
-| **LogisticRegression** | 0.8101 | 0.6563 | 0.8101 | 0.7251 |
-| **NeuralNetwork** | 0.8165 | 0.7839 | 0.8165 | 0.7859 |
-- Model Terbaik: __Neural Network__
+| **RandomForestClassifier** | **0.9508** | **0.9554** | **0.9508** | **0.9508** |
+| **NeuralNetwork** | 0.8826 | 0.9003 | 0.8826 | 0.8820 |
+| **LogisticRegression** | 0.7311 | 0.7368 | 0.7311 | 0.7309 |
+- Model Terbaik: __Random Forest Classifier__
 Alasan pemilihan:
-    - Akurasi Tertinggi (81.65%): Sedikit lebih unggul dibanding Logistic Regression.
-    - Keseimbangan Terbaik: Neural Network memiliki F1-Score tertinggi (0.7859), yang artinya model ini paling seimbang dalam menangani Precision (ketepatan tebakan) dan Recall (daya tangkap karyawan yang berpotensi resign).
-    - Perbandingan dengan Random Forest: Meskipun Random Forest punya Precision yang lumayan, namun akurasi dan recall-nya jauh tertinggal dibanding dua model lainnya.
+    - Random Forest adalah model terbaik mutlak dengan akurasi dan F1-Score mencapai 95%. Ini menunjukkan bahwa algoritma berbasis decision trees ini sangat cocok dengan pola data karyawanmu.
+    - Terlihat perbedaan yang jauh (sekitar 22%) antara Random Forest dan Logistic Regression (73%). Ini mengindikasikan bahwa hubungan antar variabel dalam datamu cenderung Non-Linear (kompleks), sehingga Logistic Regression kesulitan menangkap polanya sebaik Random Forest.
       
 ## Evaluation
 Untuk mengevaluasi performa model dalam memprediksi persetujuan pinjaman (LoanApproved), digunakan empat metrik utama berikut:
@@ -152,12 +151,26 @@ Merupakan harmonic mean antara precision dan recall. Berguna ketika ada ketidaks
 
 $$\text{F1-Score} = 2 \cdot \frac{\text{Precision} \cdot \text{Recall}}{\text{Precision} + \text{Recall}}$$
 
-## Conclusion
-Berdasarkan analisis data dan pengembangan model Machine Learning yang telah dilakukan, dapat disimpulkan bahwa:
-1) Faktor Utama Attrition: Analisis menunjukkan bahwa Lembur (OverTime), Tingkat Gaji (Monthly Income), dan Usia (Age) adalah faktor paling dominan yang mempengaruhi keputusan karyawan untuk keluar. Karyawan yang sering lembur dengan gaji rendah memiliki risiko resign tertinggi.
-2) Performa Model: Dari tiga model yang diuji (Random Forest, Logistic Regression, Neural Network), Neural Network terbukti menjadi model terbaik dengan Akurasi 81.65% dan F1-Score 0.78. Model ini dinilai cukup andal untuk digunakan departemen HR sebagai alat deteksi dini (early warning system).
-3) Rekomendasi Bisnis: Untuk menurunkan tingkat attrition, disarankan agar perusahaan meninjau ulang kebijakan lembur, melakukan penyesuaian gaji untuk posisi krusial, dan memberikan perhatian lebih pada program retensi untuk karyawan muda (<30 tahun).
-   
+## Conclusion & Recommendations
+Berdasarkan analisis data (EDA) dan pengembangan model Machine Learning yang telah dilakukan, berikut adalah kesimpulan utama dari proyek ini:
+### 1. Key Business Insights (Faktor Penyebab)
+Analisis menunjukkan bahwa keputusan karyawan untuk *resign* tidak terjadi secara acak, melainkan didorong oleh faktor-faktor spesifik:
+* **Overtime (Lembur):** Karyawan yang bekerja lembur memiliki tingkat *attrition* yang jauh lebih tinggi dibandingkan yang tidak. Ini adalah faktor risiko terbesar.
+* **Monthly Income:** Terdapat korelasi negatif yang kuat antara gaji dan *attrition*. Karyawan dengan gaji di bawah rata-rata (terutama di level Junior) lebih rentan untuk keluar.
+* **Age & Job Role:** Karyawan muda (<30 tahun) dan posisi *entry-level* (seperti Sales Representative & Lab Technician) memiliki turnover rate tertinggi.
+
+### 2. Model Performance (Solusi Prediktif)
+Dari tiga algoritma yang diuji, **Random Forest Classifier** terpilih sebagai model terbaik dengan performa yang sangat memuaskan:
+* **Akurasi: 95.08%** (Sangat tinggi).
+* **Precision & Recall: ~95%**.
+* Hal ini menunjukkan bahwa model mampu memprediksi karyawan yang berpotensi *resign* dengan tingkat kesalahan yang sangat minim (kurang dari 5%). Model ini jauh mengungguli Logistic Regression (73%) karena kemampuannya menangkap pola hubungan non-linear yang kompleks dalam data karyawan.
+
+### 3. Actionable Recommendations for HR
+Untuk menurunkan tingkat *attrition*, disarankan agar perusahaan melakukan:
+* **Review Kebijakan Lembur:** Membatasi jam lembur berlebihan atau memberikan kompensasi/benefit tambahan bagi karyawan yang sering lembur.
+* **Penyesuaian Kompensasi:** Mengevaluasi standar gaji untuk posisi *Sales Representative* dan *Lab Technician* agar lebih kompetitif di pasar.
+* **Early Warning System:** Mengimplementasikan model Random Forest ini ke dalam sistem dashboard HR untuk mendeteksi risiko *resign* karyawan setiap bulannya, sehingga HR bisa melakukan pendekatan persuasif (retensi) sebelum karyawan mengajukan surat pengunduran diri.
+  
 # 🛠️ Requirements & Installation
 Jika ingin menjalankan kode analisis ini di lokal atau Google Colab:
 - Clone repository ini:
