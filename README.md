@@ -167,9 +167,9 @@ Dari tiga algoritma yang diuji, **Random Forest Classifier** terpilih sebagai mo
 
 ### 3. Actionable Recommendations for HR
 Untuk menurunkan tingkat *attrition*, disarankan agar perusahaan melakukan:
-* **Review Kebijakan Lembur:** Membatasi jam lembur berlebihan atau memberikan kompensasi/benefit tambahan bagi karyawan yang sering lembur.
-* **Penyesuaian Kompensasi:** Mengevaluasi standar gaji untuk posisi *Sales Representative* dan *Lab Technician* agar lebih kompetitif di pasar.
-* **Early Warning System:** Mengimplementasikan model Random Forest ini ke dalam sistem dashboard HR untuk mendeteksi risiko *resign* karyawan setiap bulannya, sehingga HR bisa melakukan pendekatan persuasif (retensi) sebelum karyawan mengajukan surat pengunduran diri.
+* **Evaluasi Struktur Gaji (Salary Adjustment)**: melakukan review gaji khusus untuk posisi Sales Representative dan Lab Technician. Gap pendapatan mereka terlalu jauh dibandingkan level di atasnya.
+* **Program Retensi Junior**: Buat program pengembangan karir (career path) yang jelas untuk karyawan usia 20-30 tahun agar mereka melihat masa depan di perusahaan dan tidak buru-buru pindah.
+* **Fokus Penanganan**: Daripada fokus ke departemen HR atau Manager (yang jumlah resign-nya sedikit), fokuskan tenaga HR untuk membenahi departemen Sales & R&D (Research) yang memiliki bar resign paling panjang.
   
 # 🛠️ Requirements & Installation
 Jika ingin menjalankan kode analisis ini di lokal atau Google Colab:
