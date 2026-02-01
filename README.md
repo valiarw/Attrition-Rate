@@ -1,4 +1,5 @@
 # 📄 HR Employee Attrition Analysis & Dashboard
+*Dashboard dapat diakses melalui link [ini.](https://lookerstudio.google.com/reporting/230f22f5-7948-426b-8429-e0382d2ac5c4)*
 ## 📌 Project Overview
 Proyek ini bertujuan untuk membantu departemen HR dalam memahami, memonitor, dan memprediksi tingkat attrition (karyawan keluar) di perusahaan. Dengan menganalisis data historis karyawan, kita dapat mengidentifikasi faktor-faktor utama penyebab resign dan membangun model prediksi untuk langkah preventif.
 Proyek ini mencakup:
