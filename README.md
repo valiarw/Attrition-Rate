@@ -27,7 +27,7 @@ Dataset ini terdiri dari 1.470 baris dan 35 fitur, mencakup informasi demografis
 Jika Anda ingin menjalankan kode analisis ini di lokal atau Google Colab, ikuti langkah berikut:
 1. Clone repository ini:
    ```bash
-   git clone [https://github.com/valiarw/Attrition-Rate.git](https://github.com/valiarw/Attrition-Rate.git)
+   git clone https://github.com/valiarw/Attrition-Rate.git
    
 2. Install library yang dibutuhkan:
    ```bash
