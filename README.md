@@ -1,4 +1,4 @@
-# Proyek Akhir: Menyelesaikan Permasalahan SDM di Perusahaan Jaya Jaya Maju
+# Proyek Akhir: Menyelesaikan Permasalahan Attrition Rate di Perusahaan Jaya Jaya Maju
 
 ## Business Understanding
 Jaya Jaya Maju merupakan perusahaan yang cukup besar. Namun, saat ini perusahaan menghadapi tantangan serius berupa meningkatnya *attrition rate* (tingkat karyawan keluar/resign) yang mencapai lebih dari 10%. Hal ini bukan kondisi normal dan berpotensi merugikan perusahaan karena biaya rekrutmen dan pelatihan karyawan baru (*training*) sangatlah mahal.
@@ -30,16 +30,17 @@ Jika Anda ingin menjalankan kode analisis ini di lokal atau Google Colab, ikuti 
    git clone [https://github.com/valiarw/Attrition-Rate.git](https://github.com/valiarw/Attrition-Rate.git)
    
 2. Install library yang dibutuhkan:
-   ```pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
 
 ## Business Dashboard
 Untuk memudahkan tim HR dalam memonitor kondisi karyawan dan mengambil keputusan berbasis data, telah dibuat sebuah Business Dashboard interaktif.
-Dashboard dapat diakses melalui link berikut: 👉 [Lihat Dashboard HR Attrition di Looker Studio](https://lookerstudio.google.com/reporting/230f22f5-7948-426b-8429-e0382d2ac5c4)
+Dashboard dapat diakses melalui link berikut: 👉 [Lihat Dashboard HR Attrition di Looker Studio](https://lookerstudio.google.com/reporting/230f22f5-7948-426b-8429-e0382d2ac5c4).
 
 Fitur Utama Dashboard:
-Overview: Menampilkan total karyawan, tingkat attrition saat ini, dan jumlah karyawan aktif.
-Risk Analysis: Visualisasi faktor-faktor risiko utama seperti pengaruh Lembur (OverTime) dan Gaji (Monthly Income) terhadap keputusan resign.
-Demographics: Sebaran karyawan yang keluar berdasarkan Usia, Gender, dan Departemen.
+- Overview: Menampilkan total karyawan, tingkat attrition saat ini, dan jumlah karyawan aktif.
+- Risk Analysis: Visualisasi faktor-faktor risiko utama seperti pengaruh Lembur (OverTime) dan Gaji (Monthly Income) terhadap keputusan resign.
+- Demographics: Sebaran karyawan yang keluar berdasarkan Usia, Gender, dan Departemen.
 
 ## Conclusion
 Berdasarkan hasil analisis data dan evaluasi model Machine Learning, berikut adalah kesimpulan dari proyek ini:
